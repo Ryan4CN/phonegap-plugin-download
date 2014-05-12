@@ -29,8 +29,29 @@ dirsize.js is brought in automatically. There is no need to change or add anythi
 
 js
 
-    window.download.down(url, id, function() {
-        console.log(url + ' download finish');
+    // start download
+    window.download.start(url, function() {
+         console.log('download start');
+    });
+
+    // update progress
+    handle = window.setInterval(function() {
+        var progress = 0.00;
+        window.download.progress(function(pd) {
+            var progress = (pd * 100).toFixed(2);
+
+            // some code update progress
+
+            if (progress == '100.00') {
+                // download finish
+                window.clearInterval(handle);
+            }
+        }        
+    } , 500);
+
+    // stop download
+    window.download.stop(url, function() {
+         console.log('download stop');
     });
 
 #### Have a nice day!
