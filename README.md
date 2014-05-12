@@ -22,7 +22,7 @@ run this command afterwards (backup your project first!):
 
     $ cordova prepare
 
-dirsize.js is brought in automatically. There is no need to change or add anything in your html.
+download.js is brought in automatically. There is no need to change or add anything in your html.
 
 
 #### Usage
